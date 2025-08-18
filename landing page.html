@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> kokoette Clause Contract Management landing page</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: rgb(233, 233, 233);
+        }
+        
+        .btn1 {
+            color: #E2FB6C;
+            font-size: x-small;
+            padding: 15px;
+            margin: 12px;
+            display: inline-block;
+            background-color: #004838;
+            border-radius: 12px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+        }
+        
+        .btn2 {
+            color: #004838;
+            font-size: x-small;
+            padding: 15px;
+            margin: 12px;
+            display: inline-block;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-weight: 600;
+            border: 1px solid #004838;
+        }
+        
+        p {
+            display: inline-block;
+            font-size: large;
+            color: rgb(148, 143, 143);
+        }
+        
+        
+        nav {
+            display: flex;
+           justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(red, green, blue, 0.3);
+            
+           
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: 50px;
+            
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-button {
+            padding: 10px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+          
+          
+        }
+        
+        .secondary-button {
+            background-color: white;
+           
+            color: #333;
+        }
+        
+        .secondary-button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .primary-button {
+            background-color: #004838;
+           
+            color: white;
+        }
+        
+        .primary-button:hover {
+            background-color: #006048;
+            border-color: #006048;
+        }
+        
+    
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            
+        }
+        
+        .hero h1 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            display: block; 
+        }
+        .side{
+            display: flex;
+            ;
+        }
+
+        .clients-section {
+            
+            padding: 40px 20px;
+           display: flex
+        }
+        
+        .clients-heading {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-indent: start;
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .client-logo {
+            height: 30px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            opacity: 1;
+        }
+        .top-btn{
+            padding: 5px 5px;
+            border-radius: 15px;
+            border: 2px solid rgb(0, 66, 0);
+        }
+            
+        .tech-section {
+            padding: 80px 40px;
+            background-color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .tech-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            background-color: #ebede8;
+            border-radius: 10px;
+        
+        }
+        
+        .tech-text {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .tech-text p {
+            
+        }
+        
+        .tech-visual {
+            flex: 1;
+            background-color: #f5f5f5;
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .tech-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+            margin-left: 5%;
+            text-align: center;
+        }
+        
+        .tech-section h2 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            color: #333;
+        }
+        
+        .tech-section p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            position: top center;
+            margin-left: 25%;
+            text-align: center;
+        }
+        
+        .explore-link {
+            color: #004838;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .explore-link:hover {
+            text-decoration: underline;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .data-table th, .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table th {
+            font-weight: bold;
+            color: #004838;
+        }
+         
+        .features-section {
+            padding: 80px 40px;
+            background-color: #f9f9f9;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .feature-card h2 {
+            font-size: 20px;
+            margin: 25px 0 15px;
+            color: #004838;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #eee;
+            margin: 20px 0;
+        }
+        
+        .notification-list {
+            list-style-type: none;
+        }
+        
+        .notification-list li {
+            padding: 8px 0;
+            color: #555;
+        }
+        
+        .task-list {
+            list-style-type: none;
+        }
+        
+        .task-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .task-item:last-child {
+            border-bottom: none;
+        }
+        
+        .task-checkbox {
+            margin-right: 10px;
+        }
+        
+        .task-person {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .task-message {
+            color: #666;
+            line-height: 1.5;
+        }
+        .integration-section {
+            padding: 80px 40px;
+            background-color: #333f3c;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .integration-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .integration-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fdfbfb;
+        }
+        
+        .integration-section p {
+            font-size: 18px;
+            color: #fcfbfb;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .integration-link {
+            display: inline-block;
+            color: #004838;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: 1px solid #004838;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .integration-link:hover {
+            background-color: #0c3b14;
+            color: rgb(253, 255, 254);
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #eee;
+            margin: 40px auto;
+            max-width: 200px;
+        }
+          .testimonial-section {
+            padding: 80px 40px;
+            background-color: #fdffff;
+            color: rgb(5, 5, 5);
+        }
+        
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .testimonial-content {
+            padding-right: 40px;
+            text-align: center;
+        }
+        
+        .testimonial-quote {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            left: -25px;
+            top: -15px;
+            opacity: 0.2;
+        }
+        
+        .testimonial-author {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-position {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #080808;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .footer-section {
+            padding: 80px 40px 30px;
+            background-color: #f5f5f5;
+            color: #fffdfd;
+            background-color: #073127;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-column h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fcfdfd;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #fdfbfb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #004838;
+        }
+        
+        .contact-info {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .contact-info a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: #004838;
+        }
+        
+        .copyright {
+            text-align: left;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            color: #fffefe;
+            font-size: 14px;
+        }
+         .cta-section {
+            padding: 100px 40px;
+            background-color: #333f3c;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-heading {
+            font-size: 25px;
+            color: #fdfbfb;
+            line-height: 1;
+            display: inline-block;
+            margin-right: 60%;
+        }
+        
+        .cta-buttons {
+            display: inline-block;
+            margin-left: 60%;
+        
+
+        }
+        
+        .cta-button {
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .primary-cta {
+            background-color: #f7f8f8;
+            color: #004838;
+            border: 1px solid #004838;
+        }
+        
+        .primary-cta:hover {
+            background-color: #006048;
+        }
+        
+        .secondary-cta {
+            background-color: #E2FB6C;
+            color: #004838;
+            border: 1px solid #004838;
+        }
+        
+        .secondary-cta:hover {
+            background-color: #f5f5f5;
+        }
+        
+        
+        @media (max-width: 480px) {
+            .cta-heading {
+                font-size: 28px;
+            }
+            
+            .cta-button {
+                padding: 12px 24px;
+                width: 100%;
+            }
+        }
+        
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        
+        @media (max-width: 768px) {
+            .testimonial-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-content {
+                padding-right: 0;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        
+        @media (max-width: 768px) {
+            .tech-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="side">
+        <div class="logo">Clause</div>
+        <div class="nav-links">
+            <a href="#">Solutions</a>
+            <a href="#">Customers</a>
+            <a href="#">Pricing</a>
+        </div>
+    </div>
+        <div class="nav-buttons">
+            <div class="nav-button secondary-button">Login</div>
+            <div class="nav-button primary-button">Start Now</div>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <button class="top-btn"><i class="fas fa-plus"></i>Create For Fast</button> 
+        <h1>One tool to manage <br> contracts and your team</h1>
+        <p>Clause helps legal teams work faster, smarter and more efficiently, delivering the visibility <br> and data-driven insights to mitigate risk and ensure compliance.</p>
+        <div class="btn1">Start For Free</div>
+        <div class="btn2">Get a demo</div>
+            
+    <div class="clients-section">
+        <div class="clients-heading">More than 100+  <br> of companies trust us</div>
+        <div class="client-logos">
+            <img src="" alt="HubSpot" class="client-logo" style="height: 25px;">
+            <img src="" alt="Dropbox" class="client-logo">
+            <img src="" alt="Square" class="client-logo">
+            <img src="" alt="Amazon" class="client-logo" style="height: 20px;">
+            <img src="" alt="Grammarly" class="client-logo" style="height: 20px;">
+        </div>
+    </div>
+    </div>
+    <section class="tech-section">
+        <div>
+             <h1>Latest advanced technologies to <br> ensure everything you need</h1>
+                <p>Maximize your team's productivity and security with our affordable, user- <br>friendly contract management system.</p>
+        </div>
+        <div class="tech-content">
+            <div class="tech-text">
+            
+                <h2>Dynamic dashboard</h2>
+                <p>Clause helps legal teams work faster, smarter and more efficiently, delivering the visibility and data-driven insights to mitigate risk and ensure compliance.</p>
+                
+                <a href="#" class="explore-link">Explore all →</a>
+            </div>
+            
+            <div class="tech-visual">
+                <table class="data-table">
+                    <tr>
+                        <th>Acme Inc.</th>
+                        <th>300</th>
+                    </tr>
+                    <tr>
+                        <td>10K</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6K</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2K</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+     <section class="features-section">
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <h1>Smart notifications</h1>
+                <p>Easily accessible from the notifications center, calendar or email with the relevant activities.</p>
+                
+                <h2>Email notification</h2>
+                <button style="background-color: #004838; color: white; border: none; padding: 8px 16px; border-radius: 4px; margin-bottom: 20px;">Save</button>
+                
+                <ul class="notification-list">
+                    <li>New messages, comment, or replies</li>
+                    <li>Social emails</li>
+                    <li>Announcement and Update</li>
+                    <li>Reminders</li>
+                </ul>
+                
+                <div class="divider"></div>
+            </div>
+            
+            
+            <div class="feature-card">
+                <h1>Task management</h1>
+                <p>Discuss contract queries, manage tasks, secure approvals, track progress in the workspace.</p>
+                
+                <h2>Activity</h2>
+                <button style="background-color: #004838; color: white; border: none; padding: 6px 12px; border-radius: 4px; margin-bottom: 15px;">+ Message</button>
+                
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" class="task-checkbox" id="task1">
+                        <label for="task1">
+                            <span class="task-person">Bill Sanders</span>
+                            <span class="task-message">Hello @Ragip Diller, Could you sign the contract before the March 12? Thank you in advance 😊</span>
+                        </label>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" class="task-checkbox" id="task2">
+                        <label for="task2">
+                            <span class="task-person">Jane Cooper</span>
+                            <span class="task-message">Uploaded new contract</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="integration-section">
+        <div class="integration-content">
+            <h1>Don't replace. Integrate.</h1>
+            <p>We understand the hustle of replacing the long used tools in your process.<br>
+            That's why we integrate tools you use in your day-to-day work.</p>
+            
+            <div class="divider"></div>
+            
+            <a href="#" class="integration-link">All integrations →</a>
+        </div>
+    </section>
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="testimonial-content">
+                <div class="testimonial-quote">
+                    Clause is helping our company to decrease operational expenses and turnaround time, while increasing the compliance, resource allocation and effectiveness of our contract management.
+                </div>
+                <div class="testimonial-author">Darlene Robertson</div>
+                <div class="testimonial-position">Head of Strategy at Mailchimp</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2021</div>
+                    <div class="stat-label">Clause Founded</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1K+</div>
+                    <div class="stat-label">Company Partners</div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-heading">Discover the full scale of<br>Clause capabilities</h2>
+            <div class="cta-buttons">
+                <button class="cta-button primary-cta">Get a Demo</button>
+                <button class="cta-button secondary-cta">Start for Free</button>
+            </div>
+        </div>
+    </section>
+     <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-grid">
+                
+                <div class="footer-column">
+                    <h2>Clause</h2>
+                    <div class="contact-info">
+                        <a href="mailto:hello@clause.com">hello@clause.com</a><br>
+                        <a href="tel:+621987654321">+621 987 654 321</a>
+                    </div>
+                </div>
+                
+                
+                <div class="footer-column">
+                    <h2>Solution</h2>
+                    <ul class="footer-links">
+                        <li><a href="#">Why Clause</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">OpenAI</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                
+                
+                <div class="footer-column">
+                    <h2>Customers</h2>
+                    <ul class="footer-links">
+                        <li><a href="#">Procurement</a></li>
+                        <li><a href="#">Sales</a></li>
+                        <li><a href="#">Legal</a></li>
+                        <li><a href="#">Medium</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                    </ul>
+                </div>
+                
+            
+                <div class="footer-column">
+                    <h2>Resources</h2>
+                    <ul class="footer-links">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact Sales</a></li>
+                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © Copyright 2024 Clause. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
